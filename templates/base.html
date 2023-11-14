@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rest</title>
+		<link rel="stylesheet" href="/static/app.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<nav id="navbar">
+			<a id="home" href="/"><b>REST</b></a>
+			<!--<div>
+				<a class="nav-item" href="/"><b>item</b></a>
+				<a class="nav-btn" href="/"><b>button</b></a>
+			</div>-->
+		</nav>
+		<div id="content">
+			{% for msg in get_flashed_messages() %}
+			<div class="msg-line info-back">
+                <!--<i class="fa-solid fa-xmark msg-close-icon"></i>-->
+                <p>
+                    <i class="fa-solid fa-circle-info info-icon"></i>
+                    <span class="info-content">{{msg}}</span>
+                </p>
+            </div>
+			{{% endfor %}}
+
+			{% block content %} {% endblock %}
+		</div>
+	</body>
+</html>
